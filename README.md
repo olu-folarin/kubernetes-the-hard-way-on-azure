@@ -1,5 +1,9 @@
 # Kubernetes The Hard Way - On Azure
 
+![Azure](https://img.shields.io/badge/Azure-Compatible-blue)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.32.3-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 My documentation of building a Kubernetes cluster from scratch on Microsoft Azure, following Kelsey Hightower's [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) tutorial.
 
 ## What This Is

@@ -6,6 +6,35 @@
 
 ---
 
+## Table of Contents
+- [1. Compute Resources](#1-compute-resources)
+- [2. Machine Database](#2-machine-database-machinestxt)
+- [3. IPv4 Address](#3-ipv4_address)
+- [4. FQDN](#4-fqdn-fully-qualified-domain-name)
+- [5. Hostname](#5-hostname)
+- [6. Pod Subnet](#6-pod_subnet-pod-cidr)
+- [7. SSH](#7-ssh-secure-shell)
+- [8. Root User](#8-root-user)
+- [9. PermitRootLogin](#9-permitrootlogin)
+- [10. SSH Key Pair](#10-ssh-key-pair)
+- [11. ssh-copy-id](#11-ssh-copy-id)
+- [12. while read Loop](#12-while-read-loop)
+- [13. /etc/hosts File](#13-etchosts-file)
+- [14. hostnamectl](#14-hostnamectl)
+- [15. systemd & systemctl](#15-systemd--systemctl)
+- [16. FQDN vs IP Trade-offs](#16-fqdn-vs-ip-address-trade-offs)
+- [17. DNS Hierarchy](#17-dns-hierarchy)
+- [18. sed Command](#18-sed-command)
+- [19. scp](#19-scp-secure-copy)
+- [20. SSH -n Flag](#20-ssh--n-flag)
+- [21. for Loop](#21-for-loop-vs-while-loop)
+- [22. Network Topology](#22-network-topology-overview)
+- [23. Security Considerations](#23-security-considerations)
+- [EKS/AKS Translation](#eksaks-translation)
+- [Troubleshooting Guide](#troubleshooting-guide)
+
+---
+
 ## **1. COMPUTE RESOURCES**
 
 ### What it means:

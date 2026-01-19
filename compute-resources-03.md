@@ -4,6 +4,22 @@
 
 ---
 
+## Table of Contents
+- [Section Overview](#section-overview)
+- [Why This Section Matters](#why-this-section-matters)
+- [Challenges I Faced](#challenges-i-faced-azure-specific)
+- [Part 1: Provision Azure Infrastructure](#part-1-provision-azure-infrastructure)
+- [Part 2: Create Machine Database](#part-2-create-machine-database)
+- [Part 3: Configure SSH Access](#part-3-configure-ssh-access)
+- [Part 4: Configure Hostnames](#part-4-configure-hostnames)
+- [Part 5: Configure DNS Resolution](#part-5-configure-dns-resolution)
+- [Part 6: Final Verification](#part-6-final-verification)
+- [What I Learned](#what-i-learned)
+- [Commands Reference](#commands-reference)
+- [Troubleshooting](#troubleshooting)
+
+---
+
 ## **Section Overview**
 
 **What I Built:**

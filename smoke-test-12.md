@@ -4,6 +4,23 @@
 
 ---
 
+## Table of Contents
+- [Section Overview](#section-overview)
+- [Test 1: Data Encryption at Rest](#test-1-data-encryption-at-rest)
+- [Test 2: Deployments](#test-2-deployments)
+- [Test 3: Port Forwarding](#test-3-port-forwarding)
+- [Test 4: Container Logs](#test-4-container-logs)
+- [Test 5: Execute Commands in Container](#test-5-execute-commands-in-container)
+- [Test 6: Services (NodePort)](#test-6-services-nodeport)
+- [Issues Encountered and Resolution](#issues-encountered-and-resolution)
+- [Final Test Results](#final-test-results)
+- [What I Learned](#what-i-learned)
+- [Production Differences](#production-differences)
+- [Troubleshooting](#troubleshooting)
+- [Commands Reference](#commands-reference)
+
+---
+
 ## **Section Overview**
 
 **Goal:** Comprehensive end-to-end tests to verify the entire Kubernetes cluster is functioning correctly - from encryption to networking to container execution.

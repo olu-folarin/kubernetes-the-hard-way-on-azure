@@ -4,6 +4,20 @@
 
 ---
 
+## Table of Contents
+- [Conceptual Understanding](#conceptual-understanding)
+- [Jumpbox vs Direct Access](#jumpbox-vs-direct-access)
+- [Creating the Jumpbox on Azure](#creating-the-jumpbox-on-azure)
+- [Connecting to the Jumpbox](#connecting-to-the-jumpbox)
+- [Installing Tools on the Jumpbox](#installing-tools-on-the-jumpbox)
+- [Downloading Kubernetes Binaries](#downloading-kubernetes-binaries)
+- [Jumpbox Role in KTHW](#jumpbox-role-in-kthw)
+- [Network Topology](#network-topology-after-section-2)
+- [Key Concepts Learned](#key-concepts-learned)
+- [Troubleshooting](#troubleshooting)
+
+---
+
 ## Conceptual Understanding
 
 ### What is a Jumpbox?

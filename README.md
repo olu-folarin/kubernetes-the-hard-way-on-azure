@@ -102,7 +102,7 @@ Had to configure static routes so pods on node-0 could reach pods on node-1. Pro
 **Skip this if you:**
 - ❌ Just want a cluster (use AKS instead)
 - ❌ Don't care how Kubernetes works internally
-- ❌ Can't invest time; this takes 6-8 hours
+- ❌ Can't invest time; this takes time
 
 **Cost:** Azure resources cost money. The longer you keep VMs running, the more you pay. Run Section 13 cleanup immediately when done. Use Azure's pay-as-you-go subscription (free trial has VM size limits).
 

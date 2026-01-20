@@ -6,19 +6,19 @@
 
 **Building production-grade Kubernetes from scratch to understand what managed services abstract away.**
 
-I built a complete Kubernetes cluster manually on Azure—no AKS, no automation, no shortcuts—to understand how every component works, connects, and fails. This repository documents that journey, including the real problems I solved that don't appear in tutorials.
+I built a complete Kubernetes cluster manually on Azure (no AKS, no automation, no shortcuts) to understand how every component works, connects, and fails. This repository documents that journey, including the real problems I solved that don't appear in tutorials.
 
 ---
 
 ## Why I Built This
 
-**The Problem:** Working with managed Kubernetes (AKS, EKS, GKE) gives you a cluster, but hides the internals. When things break in production, you're troubleshooting a black box—and there's hardly anything you can get from the control plane as it's managed by the cloud provider.
+**The Problem:** Working with managed Kubernetes (AKS, EKS, GKE) gives you a cluster, but hides the internals. When things break in production, you're troubleshooting a black box; there's hardly anything you can get from the control plane as it's managed by the cloud provider.
 
-**The Goal:** Understand Kubernetes from first principles—TLS certificates, etcd consensus, kubelet communication, pod networking—so I can debug production issues with confidence.
+**The Goal:** Understand Kubernetes from first principles: TLS certificates, etcd consensus, kubelet communication, pod networking. This lets me debug production issues with confidence.
 
 **The Result:** Complete understanding of:
 - How the control plane components coordinate (API server, scheduler, controller manager)
-- Why TLS certificate configuration matters (learned this the hard way—literally)
+- Why TLS certificate configuration matters (learned this the hard way, literally)
 - What kubelets actually do on worker nodes
 - How pod networking routes traffic between nodes
 - Where cluster state lives and why etcd is critical
@@ -39,7 +39,7 @@ The API server itself needs RBAC permissions to access kubelets. This isn't docu
 New Azure accounts block `Standard_B2s` and `Standard_D2s_v5` VMs. Had to discover `Standard_D2s_v6` works through trial and `az vm list-skus`. Real-world platform engineering.
 
 ### 4. etcd is a Single Point of Failure (in this setup)
-Tutorial uses single-node etcd. Production needs 3 or 5 for high availability. Understanding WHY—Raft consensus requires quorum—matters when designing resilient systems.
+Tutorial uses single-node etcd. Production needs 3 or 5 for high availability. Understanding WHY (Raft consensus requires quorum) matters when designing resilient systems.
 
 ### 5. Pod Networking is Manual Without CNI
 Had to configure static routes so pods on node-0 could reach pods on node-1. Production uses CNI plugins (Calico, Cilium) that automate this. Now I understand what those plugins actually DO.
@@ -55,7 +55,7 @@ Had to configure static routes so pods on node-0 could reach pods on node-1. Pro
 | etcd | Provider manages it | Bootstrapped etcd, understand what it stores |
 | Worker Setup | Node pools auto-provision | Installed kubelet, containerd, kube-proxy manually |
 | Networking | Azure CNI does it | Configured routes, understand IP allocation |
-| Troubleshooting | "Submit a ticket" | Full control—can SSH to any node, check logs |
+| Troubleshooting | "Submit a ticket" | Full control: can SSH to any node, check logs |
 
 **The difference:** With managed K8s, you're a user. With this, you're an operator who understands the system.
 
@@ -102,7 +102,7 @@ Had to configure static routes so pods on node-0 could reach pods on node-1. Pro
 **Skip this if you:**
 - ❌ Just want a cluster (use AKS instead)
 - ❌ Don't care how Kubernetes works internally
-- ❌ Can't invest time—this takes 6-8 hours
+- ❌ Can't invest time; this takes 6-8 hours
 
 **Cost:** Azure resources cost money. The longer you keep VMs running, the more you pay. Run Section 13 cleanup immediately when done. Use Azure's pay-as-you-go subscription (free trial has VM size limits).
 

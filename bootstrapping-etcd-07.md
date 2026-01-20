@@ -2,7 +2,7 @@
 
 ## Overview
 
-This section bootstraps **etcd** — the distributed key-value database that stores all Kubernetes cluster state and data.
+This section bootstraps **etcd**, the distributed key-value database that stores all Kubernetes cluster state and data.
 
 **Library Catalog Analogy:**
 - **Kubernetes Cluster** = Library building
@@ -85,7 +85,7 @@ Without the catalog (etcd), librarians don't know what books exist, where they a
 ```
 
 **Important:**
-- etcd only listens on localhost (`127.0.0.1`) — not exposed to the network
+- etcd only listens on localhost (`127.0.0.1`), not exposed to the network
 - Only the API server connects directly to etcd
 - All other components go through the API server
 
@@ -119,9 +119,9 @@ scp   downloads/controller/etcd   downloads/client/etcdctl   units/etcd.service 
 ```
 
 **What you're copying:**
-- `etcd` — main etcd server binary
-- `etcdctl` — command-line client for etcd (management/troubleshooting)
-- `etcd.service` — systemd unit file (tells Linux how to run etcd)
+- `etcd`: main etcd server binary
+- `etcdctl`: command-line client for etcd (management/troubleshooting)
+- `etcd.service`: systemd unit file (tells Linux how to run etcd)
 
 ---
 
@@ -161,11 +161,11 @@ mv etcd etcdctl /usr/local/bin/
 | `/etc/etcd/` | Configuration and certificates | `ca.crt`, `kube-apiserver.crt/key` |
 | `/var/lib/etcd/` | Data storage (database files) | etcd database (created automatically) |
 
-**Why `chmod 700`:** Only root can access etcd data (security — contains all cluster secrets).
+**Why `chmod 700`:** Only root can access etcd data (security; contains all cluster secrets).
 
 **Certificates:**
-- `ca.crt` — verifies client certificates (API server must have a cert signed by this CA)
-- `kube-apiserver.crt/key` — etcd's server certificate (proves identity to clients)
+- `ca.crt`: verifies client certificates (API server must have a cert signed by this CA)
+- `kube-apiserver.crt/key`: etcd's server certificate (proves identity to clients)
 
 **Note:** You're reusing `kube-apiserver` certificates for etcd (common in single-node setups). Production setups typically use dedicated etcd certificates.
 
@@ -296,7 +296,7 @@ How Kubernetes data is stored in etcd:
 
 Key format: `/registry/<resource-type>/<namespace>/<name>`
 
-**Example — reading a secret from etcd directly:**
+**Example: reading a secret from etcd directly:**
 ```bash
 # After Section 8, when API server is running:
 ETCDCTL_API=3 etcdctl get /registry/secrets/default/my-secret   --endpoints=https://127.0.0.1:2379   --cacert=/etc/etcd/ca.crt   --cert=/etc/etcd/kube-apiserver.crt   --key=/etc/etcd/kube-apiserver.key
@@ -384,19 +384,19 @@ systemctl restart etcd
 **On server:**
 
 **Binaries:**
-- `/usr/local/bin/etcd` — etcd server
-- `/usr/local/bin/etcdctl` — etcd client
+- `/usr/local/bin/etcd`: etcd server
+- `/usr/local/bin/etcdctl`: etcd client
 
 **Configuration:**
-- `/etc/systemd/system/etcd.service` — systemd unit file
-- `/etc/etcd/ca.crt` — CA certificate
-- `/etc/etcd/kube-apiserver.crt` — server certificate
-- `/etc/etcd/kube-apiserver.key` — server private key
+- `/etc/systemd/system/etcd.service`: systemd unit file
+- `/etc/etcd/ca.crt`: CA certificate
+- `/etc/etcd/kube-apiserver.crt`: server certificate
+- `/etc/etcd/kube-apiserver.key`: server private key
 
 **Data:**
-- `/var/lib/etcd/` — etcd database (auto-created on first start)
+- `/var/lib/etcd/`: etcd database (auto-created on first start)
 
 **systemd:**
-- `/etc/systemd/system/multi-user.target.wants/etcd.service` — symlink (auto-start on boot)
+- `/etc/systemd/system/multi-user.target.wants/etcd.service`: symlink (auto-start on boot)
 
 ---

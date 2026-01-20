@@ -67,10 +67,10 @@ done
 
 ### What each command does
 
-- `set-cluster` — Defines cluster (API server address + CA cert to trust)
-- `set-credentials` — Defines user (client cert + key for authentication)
-- `set-context` — Links cluster + user together
-- `use-context` — Sets as active/default context
+- `set-cluster`: Defines cluster (API server address + CA cert to trust)
+- `set-credentials`: Defines user (client cert + key for authentication)
+- `set-context`: Links cluster + user together
+- `use-context`: Sets as active/default context
 
 **Files created:** `node-0.kubeconfig`, `node-1.kubeconfig`
 
@@ -80,7 +80,7 @@ done
 
 **Purpose:** Create kubeconfig for kube-proxy service (runs on all workers).
 
-**Why same file for both workers:** kube-proxy uses same identity (`system:kube-proxy`) on all nodes — doesn't need node-specific identity.
+**Why same file for both workers:** kube-proxy uses same identity (`system:kube-proxy`) on all nodes; it doesn't need node-specific identity.
 
 ```bash
 {
@@ -261,7 +261,7 @@ clusters:
 ```
 
 **Why embed:**
-- ✅ Portable — single file contains everything
+- ✅ Portable: single file contains everything
 - ✅ No broken paths when moving files
 - ✅ Easier distribution and backup
 

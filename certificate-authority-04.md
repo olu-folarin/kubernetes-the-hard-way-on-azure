@@ -5,10 +5,10 @@
 Kubernetes uses **zero-trust security** where every component must cryptographically prove its identity. This is achieved through **Public Key Infrastructure (PKI)** using **TLS certificates**.
 
 **Passport System Analogy:**
-- **Government** = Certificate Authority (CA) — issues and validates all passports
-- **Passport** = Certificate (`.crt` file) — public proof of identity
-- **Fingerprint** = Private Key (`.key` file) — secret signature only you possess
-- **Border Control** = TLS verification — validates passports against government records
+- **Government** = Certificate Authority (CA), which issues and validates all passports
+- **Passport** = Certificate (`.crt` file), your public proof of identity
+- **Fingerprint** = Private Key (`.key` file), a secret signature only you possess
+- **Border Control** = TLS verification, which validates passports against government records
 
 Just as border control trusts your passport because it's government-issued, Kubernetes components trust each other's certificates because they're **CA-signed**.
 
@@ -44,12 +44,12 @@ Just as border control trusts your passport because it's government-issued, Kube
 
 ### Certificate Authority (CA)
 **What:** Root of trust that issues and signs all certificates  
-**Why:** Establishes trust hierarchy — all components trust the same authority  
+**Why:** Establishes trust hierarchy; all components trust the same authority  
 **Analogy:** Government passport office  
 
 **Components:**
-- `ca.crt` — Public certificate (distributed to all VMs)
-- `ca.key` — Private key (**SECRET**, only on server)
+- `ca.crt`: Public certificate (distributed to all VMs)
+- `ca.key`: Private key (**SECRET**, only on server)
 
 ### Private Key
 **What:** Secret cryptographic signature ability  
@@ -272,7 +272,7 @@ done
 ```
 
 ### What this creates
-- 8 private keys (`.key` files) — 4096-bit RSA
+- 8 private keys (`.key` files), 4096-bit RSA
 - 8 certificate signing requests (`.csr` files)
 - 8 signed certificates (`.crt` files)
 
@@ -287,7 +287,7 @@ ls -lh *.crt *.key
 
 ## Step 4: Distribute Certificates to VMs
 
-**Purpose:** Copy certificates to VMs using the principle of least privilege — each VM only gets what it needs.
+**Purpose:** Copy certificates to VMs using the principle of least privilege. Each VM only gets what it needs.
 
 ### Worker node-0
 ```bash
@@ -370,7 +370,7 @@ ssh root@10.240.0.10 "ls -lh ~/*.crt ~/*.key"
 
 ### Certificate Validity
 - **Tutorial:** 10 years (convenience for learning)
-- **Production:** 90–365 days (your observation was correct — 10 years is too long!)
+- **Production:** 90-365 days (10 years is too long!)
 - **Best Practice:** Automated rotation with `cert-manager`
 
 ### CA Private Key Protection

@@ -112,20 +112,20 @@ Had to configure static routes so pods on node-0 could reach pods on node-1. Pro
 
 | Section | Description |
 |---------|-------------|
-| [00 - Initial Setup](intro-00.md) | Azure account setup, CLI installation, resource group creation |
-| [01 - Jumpbox](jumpbox-01.md) | Bastion host setup, Kubernetes binaries |
-| [02 - Compute Resources (Terminology)](compute-resources-02.md) | Concepts and terminology breakdown |
-| [03 - Compute Resources (Implementation)](compute-resources-03.md) | VNet, VMs, SSH, hostname configuration |
-| [04 - Certificate Authority](certificate-authority-04.md) | PKI setup, TLS certificates |
-| [05 - Kubernetes Configuration Files](kubernetes-configuration-files-05.md) | kubeconfig files for components |
-| [06 - Data Encryption Keys](data-encryption-keys-06.md) | Encryption config for secrets at rest |
-| [07 - Bootstrapping etcd](bootstrapping-etcd-07.md) | etcd cluster setup |
-| [08 - Bootstrapping Control Plane](bootstrapping-kubernetes-controllers-08.md) | API server, controller manager, scheduler |
-| [09 - Bootstrapping Workers](bootstrapping-kubernetes-workers-09.md) | kubelet, kube-proxy, containerd |
-| [10 - Configuring kubectl](configuring-kubectl-for-remote-access-10.md) | Remote kubectl access |
-| [11 - Pod Network Routes](provisioning-pod-network-routes-11.md) | Cross-node pod networking |
-| [12 - Smoke Test](smoke-test-12.md) | End-to-end cluster validation ← *Includes certificate debugging* |
-| [13 - Tear Down](tear-down-infra-13.md) | Cleanup and resource deletion |
+| [00 - Initial Setup](docs/intro-00.md) | Azure account setup, CLI installation, resource group creation |
+| [01 - Jumpbox](docs/jumpbox-01.md) | Bastion host setup, Kubernetes binaries |
+| [02 - Compute Resources (Terminology)](docs/compute-resources-02.md) | Concepts and terminology breakdown |
+| [03 - Compute Resources (Implementation)](docs/compute-resources-03.md) | VNet, VMs, SSH, hostname configuration |
+| [04 - Certificate Authority](docs/certificate-authority-04.md) | PKI setup, TLS certificates |
+| [05 - Kubernetes Configuration Files](docs/kubernetes-configuration-files-05.md) | kubeconfig files for components |
+| [06 - Data Encryption Keys](docs/data-encryption-keys-06.md) | Encryption config for secrets at rest |
+| [07 - Bootstrapping etcd](docs/bootstrapping-etcd-07.md) | etcd cluster setup |
+| [08 - Bootstrapping Control Plane](docs/bootstrapping-kubernetes-controllers-08.md) | API server, controller manager, scheduler |
+| [09 - Bootstrapping Workers](docs/bootstrapping-kubernetes-workers-09.md) | kubelet, kube-proxy, containerd |
+| [10 - Configuring kubectl](docs/configuring-kubectl-for-remote-access-10.md) | Remote kubectl access |
+| [11 - Pod Network Routes](docs/provisioning-pod-network-routes-11.md) | Cross-node pod networking |
+| [12 - Smoke Test](docs/smoke-test-12.md) | End-to-end cluster validation ← *Includes certificate debugging* |
+| [13 - Tear Down](docs/tear-down-infra-13.md) | Cleanup and resource deletion |
 
 ---
 
